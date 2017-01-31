@@ -5,7 +5,7 @@ using UnityEngine;
 public class CompositeNode : Node {
 
     //! Vector of child nodes
-    Node[] childNodes;
+    public Node[] childNodes;
     // Time since game started runngingz
     public Time timer;
 
@@ -17,16 +17,16 @@ public class CompositeNode : Node {
 	// Update is called once per frame
 	void Update () {
         // TODO: Will only update node every so many frames
-        updateChildNodes();
+        checkNodeState();
 
     }
     //! Updates the Node
-    public override Node.NodeStates updateChildNodes()
+    public override Node.NodeStates checkNodeState()
     {
         Debug.Log("called composite update");
         for (int i = 0; i < childNodes.Length; i++)
         {
-            childNodes[i].updateChildNodes();
+            childNodes[i].checkNodeState();
         }
         return Node.NodeStates.Running;
     }

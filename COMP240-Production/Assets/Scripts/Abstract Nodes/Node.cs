@@ -9,7 +9,7 @@ public class Node : MonoBehaviour {
     public NodeStates nodeState = NodeStates.Running;
     
     //! Updates nodeState
-    virtual public Node.NodeStates updateChildNodes()
+    virtual public Node.NodeStates checkNodeState()
     {
         return NodeStates.Running;
     }

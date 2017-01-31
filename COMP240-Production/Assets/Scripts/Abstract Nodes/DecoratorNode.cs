@@ -32,6 +32,7 @@ public class DecoratorNode : Node {
             return Node.NodeStates.Failure;
         // add error
     }
+
     //! Inverts a bool
     /*
 		returns a bool that is the inverse of the one passed in
