@@ -6,17 +6,21 @@ public class CompositeNode : Node {
 
     //! Vector of child nodes
     Node[] childNodes;
+    // Time since game started runngingz
+    public Time timer;
 
     // Use this for initialization
     void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        // TODO: Will only update node every so many frames
+        updateChildNodes();
 
+    }
+    //! Updates the Node
     public override Node.NodeStates updateChildNodes()
     {
         Debug.Log("called composite update");
@@ -31,5 +35,14 @@ public class CompositeNode : Node {
     void addChild()
     {
         childNodes = new Node[childNodes.Length + 1];
+    }
+
+    //! Checks to see if childNodes is empty
+    bool nodeHasChild()
+    {
+        if (childNodes.Length < 1)
+            return false;
+        else
+            return true;
     }
 }
