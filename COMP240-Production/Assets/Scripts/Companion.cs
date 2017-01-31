@@ -5,7 +5,7 @@ using UnityEngine;
 abstract public class Companion : MonoBehaviour {
     public GameObject companionObject;
     private int health = 100;
-    
+    public bool isAlive = true;
     // Use this for initialization
     void Start () {
 		
