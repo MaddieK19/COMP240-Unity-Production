@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract class Node : MonoBehaviour {
+public class Node : MonoBehaviour {
+    //! enum of possible states for nodes
     public enum NodeStates { Success, Failure, Running };
+    //! The state the Node is currently in
     public NodeStates nodeState = NodeStates.Running;
-    abstract public Node.NodeStates updateChildNodes();
+    
+    //! Updates nodeState
+    virtual public Node.NodeStates updateChildNodes()
+    {
+        return NodeStates.Running;
+    }
 
     // Use this for initialization
     void Start () {
