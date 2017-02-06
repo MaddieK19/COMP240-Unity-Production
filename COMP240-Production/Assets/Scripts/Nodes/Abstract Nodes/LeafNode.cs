@@ -17,7 +17,7 @@ public class LeafNode : Node {
 
     // Series of functions to check conditions required for different nodes and branches
     //! checks whether the health is above a certain value
-    bool checkHealth()
+    public bool checkHealth()
     {
         if (companion.getHealth() < 1)
             return companion.isAlive = false;

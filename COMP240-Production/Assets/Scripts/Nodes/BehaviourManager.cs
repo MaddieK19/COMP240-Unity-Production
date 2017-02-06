@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class BehaviourManager : SelectorNode {
     GameObject companion;
-    Node.NodeStates currentBranchState;
+    NodeStates currentBranchState;
 
 	// Use this for initialization
 	void Start () {
-        //childNodes = (new AttackBranch, IdleBranch, FishingBranch, DeadBranch); 
-	}
+        childNodes.Add(new DeadBranch());
+        //childNodes.Add(new AttackBranch());
+        //etc
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        updateBranches();
+    }
 
-    Node.NodeStates updateBranches()
+    NodeStates updateBranches()
     {
         checkNodeState();
-        return Node.NodeStates.Running;
+        return NodeStates.Running;
     }
 }

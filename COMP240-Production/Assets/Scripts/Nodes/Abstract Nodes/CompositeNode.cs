@@ -5,7 +5,7 @@ using UnityEngine;
 public class CompositeNode : Node {
 
     //! Vector of child nodes
-    public Node[] childNodes;
+    public List<Node> childNodes = new List<Node>();
     // Time since game started runngingz
     public Time timer;
 
@@ -24,7 +24,7 @@ public class CompositeNode : Node {
     public override Node.NodeStates checkNodeState()
     {
         Debug.Log("called composite update");
-        for (int i = 0; i < childNodes.Length; i++)
+        for (int i = 0; i < childNodes.Count; i++)
         {
             childNodes[i].checkNodeState();
         }
@@ -34,13 +34,13 @@ public class CompositeNode : Node {
     //! adds a node to the childNodes vector
     void addChild()
     {
-        childNodes = new Node[childNodes.Length + 1];
+        childNodes.Add(new Node());
     }
 
     //! Checks to see if childNodes is empty
     bool nodeHasChild()
     {
-        if (childNodes.Length < 1)
+        if (childNodes.Count < 1)
             return false;
         else
             return true;

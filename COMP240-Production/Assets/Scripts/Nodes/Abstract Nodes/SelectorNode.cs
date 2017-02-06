@@ -18,7 +18,7 @@ public class SelectorNode : CompositeNode {
     //! Checks the state of all child nodes and sets it owns NodeState depending on that
     override public Node.NodeStates checkNodeState()
     {
-        for (int i = 0; i < childNodes.Length; i++)
+        for (int i = 0; i < childNodes.Count; i++)
         {
             childNodes[i].checkNodeState();
             if (childNodes[i].nodeState == Node.NodeStates.Failure)
