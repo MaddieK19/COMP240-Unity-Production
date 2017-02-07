@@ -13,24 +13,17 @@ public class Falcon : Companion {
 	// Update is called once per frame
 	void Update () {
         healthCap();
-        changeToIdleAnimation();
-       // changeToDeadAnimation();
-
+        //changeAnimation("FA_Idle");
     }
 
-    // Updates companions current animation to match it's behaviour
-    //! Changes companion animation to dead
-    void changeToDeadAnimation()
+    //! Updates companions current animation to match it's behaviour
+    void changeAnimation(string animationName)
     {
-        companionObject.GetComponent<Animation>().wrapMode = WrapMode.Once;
-        companionObject.GetComponent<Animation>().CrossFade("FA_Dead");
+        if (!companionObject.GetComponent<Animation>().IsPlaying(animationName))
+        {
+            companionObject.GetComponent<Animation>().wrapMode = WrapMode.Once;
+            companionObject.GetComponent<Animation>().CrossFade(animationName);
+        }
     }
-
-    void changeToIdleAnimation()
-    {
-        companionObject.GetComponent<Animation>().wrapMode = WrapMode.Loop;
-        companionObject.GetComponent<Animation>().CrossFade("FA_Attack");
-    }
-
 
 }
