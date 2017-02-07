@@ -10,3 +10,11 @@
 * Added Companion abstract class and falcon class
 * Added Falcon assets
 
+#### 06/02/2017:
+* Added DeadBranch
+
+#### 07/02/2017:
+* Added code to DeadBranch
+* Added leaf child
+* Fixed error where LeafNode was not initialising correctly
+* Added IdleBranch
