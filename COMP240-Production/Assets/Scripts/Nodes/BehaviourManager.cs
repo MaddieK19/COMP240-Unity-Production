@@ -8,8 +8,8 @@ public class BehaviourManager : SelectorNode {
 
     // Use this for initialization
     void Start () {
-        //DeadBranch dead = gameObject.AddComponent<DeadBranch>();
         childNodes.Add(gameObject.AddComponent<DeadBranch>());
+        childNodes.Add(gameObject.AddComponent<IdleBranch>());
         //childNodes.Add(new AttackBranch());
         //etc
     }
