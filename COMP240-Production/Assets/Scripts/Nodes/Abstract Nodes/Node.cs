@@ -7,15 +7,15 @@ public class Node : MonoBehaviour {
     public enum NodeStates { Success, Failure, Running };
     //! The state the Node is currently in
     public NodeStates nodeState = NodeStates.Running;
-    
+
     //! Updates nodeState
-    virtual public Node.NodeStates checkNodeState()
+    virtual public Node.NodeStates checkNodeState(ref Companion companion)
     {
         return NodeStates.Running;
     }
 
     // Use this for initialization
-    void Start () {
+    virtual public void Start () {
 		
 	}
 	
@@ -23,5 +23,4 @@ public class Node : MonoBehaviour {
 	void Update () {
 		
 	}
-    
 }

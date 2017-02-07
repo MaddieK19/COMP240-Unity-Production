@@ -11,22 +11,22 @@ public class CompositeNode : Node {
 
     // Use this for initialization
     void Start () {
-        
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
         // TODO: Will only update node every so many frames
-        checkNodeState();
+        
+        //checkNodeState(ref companion);
 
     }
     //! Updates the Node
-    public override Node.NodeStates checkNodeState()
+    public override Node.NodeStates checkNodeState(ref Companion companion)
     {
         Debug.Log("called composite update");
         for (int i = 0; i < childNodes.Count; i++)
         {
-            childNodes[i].checkNodeState();
+            childNodes[i].checkNodeState(ref companion);
         }
         return Node.NodeStates.Running;
     }

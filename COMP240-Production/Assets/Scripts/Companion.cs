@@ -4,7 +4,7 @@ using UnityEngine;
 
 abstract public class Companion : MonoBehaviour {
     public GameObject companionObject;
-    private int health = 100;
+    private float health = 100;
     public bool isAlive = true;
     // Use this for initialization
     void Start () {
@@ -38,7 +38,7 @@ abstract public class Companion : MonoBehaviour {
         return health;
     }
     // Setter methods
-    public void setHealth(int newHealth)
+    public void setHealth(float newHealth)
     {
         health = newHealth;
     }
@@ -47,7 +47,10 @@ abstract public class Companion : MonoBehaviour {
     public void healthCap()
     {
         if (getHealth() <= 0)
+        {
             setHealth(0);
+            isAlive = false;
+        }
     }
 
 }

@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LeafNode : Node {
-    Companion companion;
-
 	// Use this for initialization
 	void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,10 +14,10 @@ public class LeafNode : Node {
 
     // Series of functions to check conditions required for different nodes and branches
     //! checks whether the health is above a certain value
-    public bool checkHealth()
+    public bool checkHealth(float currentHealth)
     {
-        if (companion.getHealth() < 1)
-            return companion.isAlive = false;
+        if (currentHealth < 1)
+            return false;
         else
             return true;
     }
@@ -32,7 +29,7 @@ public class LeafNode : Node {
     }
 
     //! returns bool that indicates whether there's an enemy near the falcon
-    bool checkForEnemy()
+    bool checkForPrey()
     {
         // TODO
         return false;

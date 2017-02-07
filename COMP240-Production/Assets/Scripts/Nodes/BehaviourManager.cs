@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BehaviourManager : SelectorNode {
-    GameObject companion;
     NodeStates currentBranchState;
+    public Companion companion;
 
-	// Use this for initialization
-	void Start () {
-        childNodes.Add(new DeadBranch());
+    // Use this for initialization
+    void Start () {
+        //DeadBranch dead = gameObject.AddComponent<DeadBranch>();
+        childNodes.Add(gameObject.AddComponent<DeadBranch>());
         //childNodes.Add(new AttackBranch());
         //etc
     }
 	
 	// Update is called once per frame
 	void Update () {
+        companion.setHealth(companion.getHealth() - 1);
         updateBranches();
     }
 
     NodeStates updateBranches()
     {
-        checkNodeState();
+        checkNodeState(ref companion);
         return NodeStates.Running;
     }
 }

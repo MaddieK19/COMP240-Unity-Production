@@ -6,7 +6,7 @@ public class DeadBranch : SelectorNode {
     LeafNode companionHealth;
     
 	// Use this for initialization
-	void Start () {
+	public override void Start () {
         companionHealth = new LeafNode();
     }
 	
@@ -14,14 +14,14 @@ public class DeadBranch : SelectorNode {
 	void Update () {
 		
 	}
-
-    public override NodeStates checkNodeState()
+    //! Checks the companions health to see if it's alive
+    public override NodeStates checkNodeState(ref Companion companion)
     {
-        bool alive = companionHealth.checkHealth();
+        bool alive = companionHealth.checkHealth(companion.getHealth());
         if (alive)
             return NodeStates.Failure;
         else
             return NodeStates.Running;
-        // The DeadBranch can never succeed as the companion cannot leave the DeadBranch
+        // The DeadBranch can never succeed as the companion should not be able to leave the DeadBranch
     }
 }
