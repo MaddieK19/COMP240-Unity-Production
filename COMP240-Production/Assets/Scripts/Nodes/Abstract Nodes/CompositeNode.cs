@@ -14,11 +14,8 @@ public class CompositeNode : Node {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	public override void Update () {
         // TODO: Will only update node every so many frames
-        
-        //checkNodeState(ref companion);
-
     }
     //! Updates the Node
     public override Node.NodeStates checkNodeState(ref Companion companion)

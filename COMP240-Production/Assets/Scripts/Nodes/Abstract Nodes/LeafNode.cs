@@ -21,17 +21,32 @@ public class LeafNode : Node {
         else
             return true;
     }
+
+    public bool checkHealth(float currentHealth, float healthThreshold)
+    {
+        if (currentHealth < healthThreshold)
+            return true;
+        else
+            return false;
+    }
     //! checks for player input
-    bool checkForInput()
+    public bool checkForInput()
     {
         // TODO
         return false;
     }
 
     //! returns bool that indicates whether there's an enemy near the falcon
-    bool checkForPrey()
+    public bool checkForPrey()
     {
         // TODO
+        return false;
+    }
+
+    //! returns bool that indicates whether there's an enemy near the falcon
+    public bool checkForPlayer()
+    {
+        // TODO check if vive controller is near
         return false;
     }
 }

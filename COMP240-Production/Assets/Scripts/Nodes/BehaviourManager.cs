@@ -7,7 +7,7 @@ public class BehaviourManager : SelectorNode {
     public Companion companion;
 
     // Use this for initialization
-    void Start () {
+    public override void Start () {
         childNodes.Add(gameObject.AddComponent<DeadBranch>());
         childNodes.Add(gameObject.AddComponent<IdleBranch>());
         //childNodes.Add(new AttackBranch());
@@ -15,8 +15,8 @@ public class BehaviourManager : SelectorNode {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        companion.setHealth(companion.getHealth() - 1);
+	public override void Update () {
+        //companion.setHealth(companion.getHealth() - 1);  // to test dead/injured branches
         updateBranches();
     }
 
