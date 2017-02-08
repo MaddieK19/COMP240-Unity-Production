@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿//used tutorial found at http://catlikecoding.com/unity/tutorials/hex-map-1/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//procedural grid
+/*
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]//gets unity to automatically add mesh filter and renderer
 public class Grid : MonoBehaviour
 {
@@ -32,6 +36,22 @@ public class Grid : MonoBehaviour
             }
         }
         mesh.vertices = vertices;
+
+        int[] triangles = new int[width * height * 6]; //making a triangle
+        for (int ti = 0, vi = 0, y = 0; y < width; y++, ti += 6, vi++)
+        {
+            for (int x = 0; x < width; x++, ti += 6, vi++)
+            {
+                triangles[ti] = vi;
+                triangles[ti + 1] = width + 1;
+                triangles[ti + 2] = 1;             //creating the three points of a triangle
+                triangles[ti + 3] = triangles[ti + 2] = vi + 1;
+                triangles[ti + 4] = triangles[ti + 1] = vi + width + 1;
+                triangles[ti + 5] = vi + width + 2;    //making a triangle with a different orientation
+                mesh.triangles = triangles;
+                yield return wait;
+            }
+        }
     }
 
     private void OnDrawGizmos() //draws vertices in red
@@ -48,18 +68,8 @@ public class Grid : MonoBehaviour
     }
 
     
+
+
 }
+*/
 
-
-//up to "We now have a mesh in play mode, but it doesn't show up yet because we haven't given it any triangles. Triangles are defined via an array of vertex indices. As each triangle has three points, three consecutive indices describe one triangle. Let's start with just one triangle."
-
-
-/*// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}*/
