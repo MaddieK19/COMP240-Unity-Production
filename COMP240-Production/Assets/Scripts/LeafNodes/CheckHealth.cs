@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using BehaviourMachine;
+using System;
+
+public class CheckHealth : ActionNode
+{
+    //public GameObjectVar companion;
+    public Companion companion;
+    public FloatVar healthThreshold;
+    public override Status Update()
+    {
+        if (companion.getHealth() < healthThreshold)
+        {
+            return Status.Success;
+        }
+        else
+            return Status.Failure;
+    }
+}
