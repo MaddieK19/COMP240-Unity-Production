@@ -18,3 +18,7 @@
 * Added leaf child
 * Fixed error where LeafNode was not initialising correctly
 * Added IdleBranch
+
+####08/02/2017:
+* Altered Behaviour tree to use Behaviour Machine Library to make it easier to manage
+* Added pathfining to companion
