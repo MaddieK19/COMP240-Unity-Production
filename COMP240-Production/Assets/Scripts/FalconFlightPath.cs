@@ -24,6 +24,5 @@ public class FalconFlightPath : MonoBehaviour {
         y = yPos;
         currentPosition = new Vector3(x, y, z);
         transform.position = currentPosition;
-
     }
 }

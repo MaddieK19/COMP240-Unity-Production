@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviourMachine;
-using System;
 using UnityEngine.AI;
 
-public class GoToPoint : ActionNode
-{
+public class GoToGameObject : ActionNode {
     public NavMeshAgent companionNavMesh;
     public GameObjectVar companion;
-    public GameObjectVar goalObject; 
+    public GameObjectVar goalObject;
 
     public override Status Update()
     {
@@ -21,4 +19,5 @@ public class GoToPoint : ActionNode
             return Status.Running;
         }
     }
+
 }
