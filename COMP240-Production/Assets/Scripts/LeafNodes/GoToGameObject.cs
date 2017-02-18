@@ -11,13 +11,17 @@ public class GoToGameObject : ActionNode {
 
     public override Status Update()
     {
-        if (companion.Value.transform.position == goalObject.Value.transform.position)
-            return Status.Failure;
+        if (Vector3.Distance(companion.Value.transform.position, goalObject.Value.transform.position) < 1)
+        {
+            return Status.Success;
+        }
+
         else
         {
             companionNavMesh.SetDestination(goalObject.Value.transform.position);
             return Status.Running;
         }
+        
     }
 
 }
