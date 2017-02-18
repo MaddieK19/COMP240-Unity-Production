@@ -7,7 +7,7 @@ using System;
 public class ChangeAnimation : ActionNode
 {
     public String animationName;
-    public String deathAnimation;
+    public bool loopAnimation;
     public GameObject companion;
     public override Status Update()
     {
@@ -15,11 +15,11 @@ public class ChangeAnimation : ActionNode
         {
             return Status.Failure;
         }
-        if (animationName == deathAnimation)
+        if (!loopAnimation)
         {
             companion.GetComponent<Animation>().wrapMode = WrapMode.ClampForever;
         }
-        else if (animationName != deathAnimation)
+        else if (loopAnimation)
         {
             companion.GetComponent<Animation>().wrapMode = WrapMode.Loop;
         }
