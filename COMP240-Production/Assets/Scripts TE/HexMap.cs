@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
-//TO DO: Now our grid needs to know about the canvas and the prefab. 
+using UnityEngine.UI; 
 
 public class HexMap : MonoBehaviour
 {
@@ -18,17 +16,18 @@ public class HexMap : MonoBehaviour
     {
         public const float outerRadius = 10f;
         public const float innerRadius = outerRadius * 0.866025404f;
-    }
 
-    //working out the corners in relation to the center
-    public static Vector3[] corners = {
+
+        //working out the corners in relation to the center
+        public static Vector3[] corners = {
         new Vector3(0f, 0f, outerRadius),
         new Vector3(innerRadius, 0f, 0.5f * outerRadius),
         new Vector3(innerRadius, 0f, -0.5f * outerRadius),
         new Vector3(0f, 0f, -outerRadius),
         new Vector3(-innerRadius, 0f, -0.5f * outerRadius),
         new Vector3(-innerRadius, 0f, 0.5f * outerRadius)
-    };
+        };
+        };
 
 
     //creating a square grid
@@ -56,12 +55,17 @@ public class HexMap : MonoBehaviour
     void CreateCell(int x, int z, int i)
     {
         Vector3 position;
-        position.x = x * 10f;
+        position.x = (x + z * 0.5f - z / 2) * (HexMetrics.innerRadius * 2f);
         position.y = 0f;
-        position.z = z * 10f;
+        position.z = z * (HexMetrics.outerRadius * 1.5f);
 
         HexMap cell = cells[i] = Instantiate<HexMap>(cellPrefab);
         cell.transform.SetParent(transform, false);
         cell.transform.localPosition = position;
+
+        Text name = Instantiate<Text>(cellLabelPrefab);
+        name.rectTransform.SetParent(gridCanvas.transform, false);
+        name.rectTransform.anchoredPosition = new Vector2(position.x, position.z);
+        name.text = x.ToString() + "\n" + z.ToString();
     }
 }
