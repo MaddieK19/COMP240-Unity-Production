@@ -8,10 +8,11 @@ public class CheckHealth : ActionNode
 {
     //public GameObjectVar companion;
     public Companion companion;
-    public FloatVar healthThreshold;
+    public FloatVar maxhealthThreshold;
+    public FloatVar minhealthThreshold;
     public override Status Update()
     {
-        if (companion.getHealth() < healthThreshold)
+        if (companion.getHealth() < maxhealthThreshold && companion.getHealth() > minhealthThreshold)
         {
             return Status.Success;
         }
