@@ -8,7 +8,7 @@ public class CheckForGameObjects : ActionNode
 {
     public GameObjectVar objectToCheck;
     public GameObjectVar companion;
-    public FloatVar distance;
+    private FloatVar distance;
     public FloatVar distanceThreshold;
     public override Status Update()
     {
