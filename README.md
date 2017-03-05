@@ -38,3 +38,4 @@
 
 ####05/03/2017:
 * Created a new branch for the Arduino haptics
+* Merged and updated branches with each other
