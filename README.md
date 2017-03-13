@@ -22,3 +22,21 @@
 ####08/02/2017:
 * Altered Behaviour tree to use Behaviour Machine Library to make it easier to manage
 * Added pathfining to companion
+
+####15/02/2017:
+* Added a hunting branch
+
+####18/02/2017:
+* Fixed issue where GoToGameObject node could never succeed 
+* Added injured subbranch to idle
+
+####02/03/2017:
+* Added more leaf nodes
+
+####03/03/2017:
+* Added SerialCommUnity package to help Unity work with the Arduino
+
+####05/03/2017:
+* Created a new branch for the Arduino haptics
+* Merged and updated branches with each other
+* Added SerialController to falcon
