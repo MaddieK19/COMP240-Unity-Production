@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class Hexgrid : MonoBehaviour
 {
 
-    public int width = 6;
-    public int height = 6;
+    public int width = 20;
+    public int height = 20;
 
     public Color defaultColor = Color.white;
 
@@ -61,10 +61,5 @@ public class Hexgrid : MonoBehaviour
         cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
         cell.color = defaultColor;
 
-        Text label = Instantiate<Text>(cellLabelPrefab);
-        label.rectTransform.SetParent(gridCanvas.transform, false);
-        label.rectTransform.anchoredPosition =
-            new Vector2(position.x, position.z);
-        label.text = cell.coordinates.ToStringOnSeparateLines();
     }
 }
