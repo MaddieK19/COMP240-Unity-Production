@@ -10,7 +10,16 @@ public class TriggerSerial : ActionNode
 
     public override Status Update()
     {
-        serialController.SendSerialMessage("p");
-        return Status.Success;
+        try
+         {
+             serialController.SendSerialMessage("p");
+             return Status.Success;
+         }
+         catch(NullReferenceException)
+         {
+             Debug.Log("Arduino not connected");
+             return Status.Success;
+         }
+
     }
 }
