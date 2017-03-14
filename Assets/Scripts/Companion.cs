@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Abstract class for Companions in the game to inherit from
+ */
 abstract public class Companion : MonoBehaviour {
     public GameObject companionObject;
     public float health = 100;
@@ -17,21 +19,12 @@ abstract public class Companion : MonoBehaviour {
 	}
 
     // Getter Methods
-    //! returns the Companion's X position
-    public float getX()
+    //! returns the Companion's position
+    public Vector3 getPos()
     {
-        return companionObject.transform.position.x;
+        return companionObject.transform.position;
     }
-    //! returns the Companion's Y position
-    public float getY()
-    {
-        return companionObject.transform.position.y;
-    }
-    //! returns the Companion's Z position
-    public float getZ()
-    {
-        return companionObject.transform.position.z;
-    }
+ 
     //! Returns the Companion's health
     public float getHealth()
     {
@@ -43,7 +36,8 @@ abstract public class Companion : MonoBehaviour {
         health = newHealth;
     }
 
-    //! Prevents companion from having negative health
+    // Prevents companion from having negative health
+    // Ensures the companion will stay in the DeadState 
     public void healthCap()
     {
         if (getHealth() <= 0)
