@@ -17,9 +17,9 @@ public class GoToGameObject : ActionNode {
         }
 
         else
-        {
+        {//TODO : have two version of node on where else is runnign and one where it succeed
             companionNavMesh.SetDestination(goalObject.Value.transform.position);
-            return Status.Running;
+            return Status.Success;
         }
         
     }
