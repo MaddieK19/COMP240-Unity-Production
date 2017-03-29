@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/* Base class for the companions prey
- * TODO: Make Prey an abstract class and have different types of prey
+/* 
+ * Base class for the companions prey
  */
 public class Prey : MonoBehaviour
 {
-    public GameObject falcon;
+    GameObject falcon;
     int health = 100;
 
     // Use this for initialization
     void Start()
     {
-
+        falcon = GameObject.FindGameObjectWithTag("Predator");
     }
 
     // Update is called once per frame
