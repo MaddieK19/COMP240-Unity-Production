@@ -1,6 +1,8 @@
 # COMP240-Unity-Production
 ##Maddie Kay and Thomas Easterbrook
 
+https://teasterbrook17.github.io/COMP240-Unity-Production/
+
 #Change Log
 #### 30/01/2017:  
 * Started migrating project over to Unity to make VR easier to implement  
