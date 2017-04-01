@@ -19,10 +19,10 @@ public class MoveTowards : ActionNode
 
         else
         {
-            companionNavMesh.transform.position = Vector3.MoveTowards(companionNavMesh.transform.position, goalObject.Value.transform.position, Time.deltaTime * 0.5f);
+            companionNavMesh.SetDestination(goalObject.Value.transform.position);
             return Status.Running;
         }
-
+        
     }
 
 }
