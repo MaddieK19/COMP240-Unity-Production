@@ -1,7 +1,7 @@
 # COMP240-Unity-Production
-##Maddie Kay and Thomas Easterbrook
+## Maddie Kay and Thomas Easterbrook
 
-#Change Log
+# Change Log
 #### 30/01/2017:  
 * Started migrating project over to Unity to make VR easier to implement  
 
@@ -19,24 +19,37 @@
 * Fixed error where LeafNode was not initialising correctly
 * Added IdleBranch
 
-####08/02/2017:
+#### 08/02/2017:
 * Altered Behaviour tree to use Behaviour Machine Library to make it easier to manage
 * Added pathfining to companion
 
-####15/02/2017:
+#### 15/02/2017:
 * Added a hunting branch
 
-####18/02/2017:
+#### 18/02/2017:
 * Fixed issue where GoToGameObject node could never succeed 
 * Added injured subbranch to idle
 
-####02/03/2017:
+#### 02/03/2017:
 * Added more leaf nodes
 
-####03/03/2017:
+#### 03/03/2017:
 * Added SerialCommUnity package to help Unity work with the Arduino
 
-####05/03/2017:
+#### 05/03/2017:
 * Created a new branch for the Arduino haptics
 * Merged and updated branches with each other
 * Added SerialController to falcon
+
+#### 14/03/2017:
+* Added try catch so game does not crash when there's no Arduino plugged in
+
+#### 26/03/2017:
+* Created new branch for VR
+* Added SteamVR plugin
+* Switched camera to be SteamVR CameraRig
+
+#### 28/03/2017:
+* Merged PCG and Ai branches in Developement
+
+
