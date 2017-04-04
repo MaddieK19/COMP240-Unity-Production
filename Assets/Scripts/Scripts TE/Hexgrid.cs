@@ -42,23 +42,23 @@ public class Hexgrid : MonoBehaviour
     void Start()
     {
         hexMesh.Triangulate(cells);
-        for (int i = 1; i <= 7; i++)
+        for (int i = 1; i <= 20; i++)
         {
             GameObject cube = Instantiate(mountainPre, transform.position, Quaternion.identity) as GameObject;
-            cube.transform.position = new Vector3(Random.Range(-80, -17), -0.1f, Random.Range(-30, 70));
+            cube.transform.position = new Vector3(Random.Range(-5, 450), -0.1f, Random.Range(0, 270));
             cube.transform.localScale = new Vector3(Random.Range(1, 2), Random.Range(1, 2), Random.Range(1, 2));
         }
         hexMesh.Triangulate(cells);
-        for (int i = 1; i <= 3; i++)
+        for (int i = 1; i <= 15; i++)
         {
             GameObject cube2 = Instantiate(mountainPrefab, transform.position, Quaternion.identity) as GameObject;
-            cube2.transform.position = new Vector3(Random.Range(7, 46), -0.1f, Random.Range(-15, 40));
+            cube2.transform.position = new Vector3(Random.Range(-30, 400), -0.1f, Random.Range(0, 280));
             cube2.transform.localScale = new Vector3(Random.Range(1, 2), Random.Range(1, 2), Random.Range(1, 2));
         }
-        for (int i = 1; i <= 16; i++)
+        for (int i = 1; i <= 100; i++)
         {
             GameObject cube3 = Instantiate(tree, tree.transform.position, Quaternion.identity) as GameObject;
-            tree.transform.position = new Vector3(Random.Range(-30, 40), -0.1f, Random.Range(-17, 30));
+            tree.transform.position = new Vector3(Random.Range(-10, 450), -0.1f, Random.Range(20, 230));
             tree.transform.localScale = new Vector3(Random.Range(1, 2), Random.Range(1, 2), Random.Range(1, 2));
         }
     }
