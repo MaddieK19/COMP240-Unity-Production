@@ -52,4 +52,7 @@
 #### 28/03/2017:
 * Merged PCG and Ai branches in Developement
 
+#### 04/04/2017
+* Randomly spawns mountains and trees
+* Added Vive controller compatability to BT
 
