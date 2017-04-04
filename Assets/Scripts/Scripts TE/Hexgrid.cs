@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/*Used the tutorial catLikeCoding for the map generation part of this VR falconry simulator
+The URL - http://catlikecoding.com/unity/tutorials/hex-map-1/*/
+
 public class Hexgrid : MonoBehaviour
 {
 
