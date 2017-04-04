@@ -32,7 +32,7 @@ public class Hexgrid : MonoBehaviour
             }
         }
     }
-
+    
     void Start()
     {
         hexMesh.Triangulate(cells);
@@ -50,10 +50,9 @@ public class Hexgrid : MonoBehaviour
 
     void CreateCell(int x, int z, int i)
     {
-        int cube_width = 1;
-        int cube_height = 1;
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.transform.position = new Vector3(cube_width, 0, cube_height);
+        cube.transform.position = new Vector3(Random.Range(-10,30), 0, Random.Range(-10, 30));
+        cube.transform.localScale = new Vector3(Random.Range(1, 10), Random.Range(1, 10), Random.Range(1, 10));
 
         Vector3 position;
         position.x = (x + z * 0.5f - z / 2) * (HexMetrics.innerRadius * 2f);
@@ -65,15 +64,6 @@ public class Hexgrid : MonoBehaviour
         cell.transform.localPosition = position;
         cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
         cell.color = defaultColor;
-        /*
-        void Start() {
-            for (int y = 0; y < 5; y++)
-            {
-                for (int x = 0; x < 5; x++)
-                {
-                    GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.AddComponent<Rigidbody>();
-                    cube.transform.position = new Vector3(x, y, 0);
-                }*/
+      
             }
 }
