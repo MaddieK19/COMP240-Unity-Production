@@ -18,7 +18,6 @@ public class FalconFlightPath : MonoBehaviour {
     /// Use this for initialization
     void Start()
     {
-
     }
 
     /// Update is called once per frame
@@ -26,8 +25,8 @@ public class FalconFlightPath : MonoBehaviour {
     {
         Vector3 previousPosition = currentPosition;
         timeCounter += Time.deltaTime;
-        x = Mathf.Cos(timeCounter) * 2;
-        z = Mathf.Sin(timeCounter) * 2;
+        x = Mathf.Cos(timeCounter) * 4;
+        z = Mathf.Sin(timeCounter) * 4;
         y = yPosition;
         currentPosition = new Vector3(x, y, z);
         transform.position = currentPosition;

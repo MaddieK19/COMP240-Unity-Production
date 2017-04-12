@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviourMachine;
 using UnityEngine.AI;
+/*!
+ *  Leafnode that moves companion navmesh towards a goal object
+ */
 
-public class GoToGameObject : ActionNode {
+public class GoToGameObject : ActionNode
+{
+    //! NavMeshAgent for the companions navmesh
     public NavMeshAgent companionNavMesh;
-    public GameObjectVar companion;
-    public GameObjectVar goalObject;
+    //! GameObject for companion
+    public GameObject companion;
+    //! GameObject for the companion's goal
+    public GameObject goalObject;
 
     public override Status Update()
     {
-        if (Vector3.Distance(companion.Value.transform.position, goalObject.Value.transform.position) < 1)
-        {
+        if (Vector3.Distance(companion.transform.position, goalObject.transform.position) < 1)
             return Status.Success;
-        }
-
         else
-        {//TODO : have two version of node on where else is runnign and one where it succeed
-            companionNavMesh.SetDestination(goalObject.Value.transform.position);
+        {
+            companionNavMesh.SetDestination(goalObject.transform.position);
             return Status.Success;
         }
-        
     }
-
 }
