@@ -10,6 +10,8 @@ public class Hexgrid : MonoBehaviour
     public GameObject mountainPre;
     public GameObject tree;
     public GameObject mountainPrefab;
+    public GameObject mapedge;
+    public GameObject mapedge1;
     public int width = 1;
     public int height = 1;
 
@@ -60,6 +62,42 @@ public class Hexgrid : MonoBehaviour
             GameObject cube3 = Instantiate(tree, tree.transform.position, Quaternion.identity) as GameObject;
             tree.transform.position = new Vector3(Random.Range(-10, 450), -0.1f, Random.Range(20, 230));
             tree.transform.localScale = new Vector3(Random.Range(1, 2), Random.Range(1, 2), Random.Range(1, 2));
+        }
+        for (int i = 1; i <= 100; i++)
+        {
+            GameObject cube4 = Instantiate(mapedge, mapedge.transform.position, Quaternion.identity) as GameObject;
+            mapedge.transform.position = new Vector3(Random.Range(-30, 450), -0.5f, Random.Range(-20, -16));
+            mapedge.transform.localScale = new Vector3(Random.Range(1, 4), Random.Range(1, 4), Random.Range(1, 4));
+        }
+        for (int i = 1; i <= 60; i++)
+        {
+            GameObject cube5 = Instantiate(mapedge1, mapedge1.transform.position, Quaternion.identity) as GameObject;
+            mapedge1.transform.position = new Vector3(Random.Range(-30, 450), -0.7f, Random.Range(-29, -18));
+            mapedge1.transform.localScale = new Vector3(Random.Range(2, 3), Random.Range(2, 3), Random.Range(2, 3));
+        }
+        for (int i = 1; i <= 150; i++)
+        {
+            GameObject cube4 = Instantiate(mapedge, mapedge.transform.position, Quaternion.identity) as GameObject;
+            mapedge.transform.position = new Vector3(Random.Range(-40, -35), -0.5f, Random.Range(-20, 350));
+            mapedge.transform.localScale = new Vector3(Random.Range(1, 4), Random.Range(1, 4), Random.Range(1, 4));
+        }
+        for (int i = 1; i <= 150; i++)
+        {
+            GameObject cube4 = Instantiate(mapedge, mapedge.transform.position, Quaternion.identity) as GameObject;
+            mapedge.transform.position = new Vector3(Random.Range(-10, 450), -0.1f, Random.Range(240, 248));
+            mapedge.transform.localScale = new Vector3(Random.Range(1, 4), Random.Range(1, 4), Random.Range(1, 4));
+        }
+        for (int i = 1; i <= 60; i++)
+        {
+            GameObject cube5 = Instantiate(mapedge1, mapedge1.transform.position, Quaternion.identity) as GameObject;
+            mapedge1.transform.position = new Vector3(Random.Range(-10, 450), -0.1f, Random.Range(240, 248));
+            mapedge1.transform.localScale = new Vector3(Random.Range(2, 3), Random.Range(2, 3), Random.Range(2, 3));
+        }
+        for (int i = 1; i <= 150; i++)
+        {
+            GameObject cube4 = Instantiate(mapedge, mapedge.transform.position, Quaternion.identity) as GameObject;
+            mapedge.transform.position = new Vector3(Random.Range(415, 420), -0.1f, Random.Range(-20, 248));
+            mapedge.transform.localScale = new Vector3(Random.Range(1, 4), Random.Range(1, 4), Random.Range(1, 4));
         }
     }
 
