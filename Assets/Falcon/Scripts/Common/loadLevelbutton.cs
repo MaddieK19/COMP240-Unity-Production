@@ -29,6 +29,7 @@ public class loadLevelbutton : MonoBehaviour {
 	private void OnMouseDown()
 	{
 		Application.LoadLevel(loadLevel);
+
 	}
 
 
