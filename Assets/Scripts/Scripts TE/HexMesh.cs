@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class HexMesh : MonoBehaviour
+public class HexMesh : MonoBehaviour //hexmesh takes care of mesh
 {
 
     Mesh hexMesh;
@@ -14,8 +14,8 @@ public class HexMesh : MonoBehaviour
 
     void Awake()
     {
-        GetComponent<MeshFilter>().mesh = hexMesh = new Mesh();
-        meshCollider = gameObject.AddComponent<MeshCollider>();
+        GetComponent<MeshFilter>().mesh = hexMesh = new Mesh(); //adding filter
+        meshCollider = gameObject.AddComponent<MeshCollider>();//collider
         hexMesh.name = "Hex Mesh";
         vertices = new List<Vector3>();
         colors = new List<Color>();
