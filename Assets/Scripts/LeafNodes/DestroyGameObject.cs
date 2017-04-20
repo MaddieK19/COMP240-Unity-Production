@@ -9,7 +9,8 @@ public class DestroyGameObject : ActionNode
     public GameObject objectToDestroy;
     public override Status Update()
     {
-        UnityEngine.Object.Destroy(objectToDestroy);
+        // UnityEngine.Object.Destroy(objectToDestroy);
+        objectToDestroy.GetComponent<MeshRenderer>().enabled = false;
         return Status.Success;
     }
 }
