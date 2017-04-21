@@ -13,13 +13,14 @@ public class TriggerSerial : ActionNode
         try
          {
              serialController.SendSerialMessage("p");
-             return Status.Success;
          }
          catch(NullReferenceException)
          {
              Debug.Log("Arduino not connected");
-             return Status.Success;
          }
+        return Status.Success;
+
+
 
     }
 }
