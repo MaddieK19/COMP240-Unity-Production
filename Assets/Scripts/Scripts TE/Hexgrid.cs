@@ -107,7 +107,7 @@ public class Hexgrid : MonoBehaviour
         HexCoordinates coordinates = HexCoordinates.FromPosition(position);
         int index = coordinates.X + coordinates.Z * width + coordinates.Z / 2;
         HexCell cell = cells[index];
-        cell.color = color;
+        //cell.color = color;
         hexMesh.Triangulate(cells);
     }
 
@@ -123,7 +123,7 @@ public class Hexgrid : MonoBehaviour
         cell.transform.SetParent(transform, false);
         cell.transform.localPosition = position;
         cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
-        cell.color = defaultColor;
+        //cell.color = defaultColor;
       
             }
 }
