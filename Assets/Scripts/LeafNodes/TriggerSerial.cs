@@ -4,8 +4,14 @@ using UnityEngine;
 using BehaviourMachine;
 using System;
 
+ /*!
+ * LeafNode that sends a serial message to the Arduino 
+ */
+
+
 public class TriggerSerial : ActionNode
 {
+    //! SerialController to send serial message with
     public SerialController serialController;
 
     public override Status Update()
@@ -13,13 +19,11 @@ public class TriggerSerial : ActionNode
         try
          {
              serialController.SendSerialMessage("p");
-             return Status.Success;
          }
          catch(NullReferenceException)
          {
              Debug.Log("Arduino not connected");
-             return Status.Success;
          }
-
+        return Status.Success;
     }
 }

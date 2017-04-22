@@ -16,8 +16,9 @@ public class CheckForGameObjects : ActionNode
     private FloatVar distance;
     // Float for the maximum distance away and object can be to return Success
     public FloatVar distanceThreshold;
-    // Check to see how far away objectToCheck is and returns 
-    // true is distance is within distanceThreshold
+    // Check to see how far away objectToCheck is and returns true is distance is within distanceThreshold
+
+
     public override Status Update()
     {
         distance = (objectToCheck.Value.transform.position - companion.Value.transform.position).magnitude;

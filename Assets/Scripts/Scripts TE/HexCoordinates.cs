@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
+/*section for getting co-ordinates of hexagons*/
 public struct HexCoordinates
 {
 
@@ -22,7 +23,7 @@ public struct HexCoordinates
     {
         get
         {
-            return -X - Z;
+            return -X - Z; //working out y co-ordinate
         }
     }
     public override string ToString()
@@ -35,19 +36,19 @@ public struct HexCoordinates
         return X.ToString() + "\n" + Y.ToString() + "\n" + Z.ToString();
     }
 
-    public static HexCoordinates FromPosition(Vector3 position)
+    public static HexCoordinates FromPosition(Vector3 position)//working out which cells we are touching
     {
-        float x = position.x / (HexMetrics.innerRadius * 2f);
-        float y = -x;
+        float x = position.x / (HexMetrics.innerRadius * 2f);//dividing x by wisth a hexagon
+        float y = -x; //mirror of x
         float offset = position.z / (HexMetrics.outerRadius * 3f);
-        x -= offset;
+        x -= offset;//z co-ordinate isnt zero so shift to accomidate that
         y -= offset;
         int iX = Mathf.RoundToInt(x);
-        int iY = Mathf.RoundToInt(y);
+        int iY = Mathf.RoundToInt(y);//rounding to ints to to get the co-ordinates
         int iZ = Mathf.RoundToInt(-x - y);
         if (iX + iY + iZ != 0)
         {
-            float dX = Mathf.Abs(x - iX);
+            float dX = Mathf.Abs(x - iX); //reconstucting co-oridnates due to rounding error which occur with a large amount of rounding
             float dY = Mathf.Abs(y - iY);
             float dZ = Mathf.Abs(-x - y - iZ);
 

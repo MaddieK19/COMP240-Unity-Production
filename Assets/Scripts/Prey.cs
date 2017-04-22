@@ -1,13 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/* Base class for the companions prey
- * TODO: Make Prey an abstract class and have different types of prey
+/*! 
+ * Base class for the companions prey
  */
 public class Prey : MonoBehaviour
 {
-    public GameObject falcon;
-    int health = 100;
+    //! int for the prey's health
+    private int health = 100;
+
+    //! Sets health to equal newHealth
+    public void setHealth(int newHealth)
+    {
+        health = newHealth;
+    }
+
+    //! Returns health
+    public int getHealth()
+    {
+        return health;
+    }
 
     // Use this for initialization
     void Start()
@@ -19,21 +31,5 @@ public class Prey : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Predator")
-        {
-            transform.parent = falcon.transform;
-        }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Predator")
-        {
-            transform.parent = null;
-        }
     }
 }

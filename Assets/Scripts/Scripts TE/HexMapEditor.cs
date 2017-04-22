@@ -13,14 +13,14 @@ public class HexMapEditor : MonoBehaviour {
 		SelectColor(0);
 	}
 
-	void Update () {
+	void Update () {//getting input if mouse button is pressed
 		if (Input.GetMouseButton(0) &&
             !EventSystem.current.IsPointerOverGameObject()) {
 			HandleInput();
 		}
 	}
 
-	void HandleInput () {
+	void HandleInput () {//works out where user is pointing
 		Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast(inputRay, out hit)) {
