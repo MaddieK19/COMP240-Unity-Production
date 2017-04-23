@@ -64,10 +64,10 @@ public class HexMesh : MonoBehaviour //hexmesh takes care of mesh
         triangles.Add(vertexIndex + 2);
     }
 
-    /*void AddTriangleColor(Color color)
+    void AddTriangleColor(Color color)
     {
         colors.Add(color);
         colors.Add(color);
         colors.Add(color);
-    }*/
+    }
 }
