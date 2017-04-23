@@ -1,6 +1,17 @@
 # COMP240-Unity-Production
 ## Maddie Kay and Thomas Easterbrook
 
+# Asset Packages Used:
+* [SteamVR Plugin](https://www.assetstore.unity3d.com/en/#!/content/32647)
+* [SerialCommUnity](https://dwilches.github.io/SerialCommUnity/)
+* [Falcon](https://www.assetstore.unity3d.com/en/#!/content/26962)
+* [Low Poly Styled Trees](https://www.assetstore.unity3d.com/en/#!/content/43103)
+* [Behaviour Machine](https://www.assetstore.unity3d.com/en/#!/content/20280)
+* [Infinitia Mountains](https://www.assetstore.unity3d.com/en/#!/content/53984)
+* [Realistic Terrain Collection LITE](https://www.assetstore.unity3d.com/en/#!/content/47726)
+
+
+
 # Change Log
 #### 30/01/2017:  
 * Started migrating project over to Unity to make VR easier to implement  
